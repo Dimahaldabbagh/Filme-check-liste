@@ -20,7 +20,7 @@ import java.util.List;
                     new Film(1L, "Inception", "Sci-Fi", 5),
                     new Film(2L, "The Matrix", "Action", 4),
                     new Film(3L, "Titanic", "Drama", 3),
-                    new Film(4L,"bakir ","action",100)
+                    new Film(4L,"bakir ","ACtion",100)
             );
         }
     }
