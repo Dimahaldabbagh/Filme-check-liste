@@ -1,6 +1,8 @@
 package de.htwberlin.webtech.webtech.Controller;
 
+import Service.FilmService;
 import de.htwberlin.webtech.webtech.Film;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,14 +16,12 @@ import java.util.List;
     @CrossOrigin(origins = "*") // erlaubt Zugriff vom Frontend(Vue.js)
     public class FilmController {
 
+        @Autowired
+        FilmService service;
+
         @GetMapping
         public List<Film> getFilme() {
-            return Arrays.asList(
-                    new Film(1L, "Inception", "Sci-Fi", 5),
-                    new Film(2L, "The Matrix", "Action", 4),
-                    new Film(3L, "Titanic", "Drama", 3),
-                    new Film(4L,"bakir ","ACtion",100)
-            );
+            return service.findAll();
         }
     }
 
