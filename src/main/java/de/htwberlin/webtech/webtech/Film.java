@@ -1,4 +1,4 @@
-package Model;
+package de.htwberlin.webtech.webtech;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
