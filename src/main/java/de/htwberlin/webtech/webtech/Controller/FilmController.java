@@ -1,12 +1,9 @@
 package de.htwberlin.webtech.webtech.Controller;
 
+import de.htwberlin.webtech.webtech.Film;
 import de.htwberlin.webtech.webtech.Service.FilmService;
-import Model.Film;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,6 +19,23 @@ import java.util.List;
         public List<Film> getFilme() {
             return service.findAll();
         }
+
+        @PutMapping("/{id}")
+        public Film updateFilm(@PathVariable Long id, @RequestBody Film film) {
+            return service.update(id, film);
+        }
+
+        @DeleteMapping("/{id}")
+        public boolean deleteFilm(@PathVariable Long id) {
+            return service.delete(id);
+        }
+
+        @GetMapping("/search")
+        public List<Film> search(@RequestParam(required = false) String titel,
+                                 @RequestParam(required = false) String genre) {
+            return service.search(titel, genre);
+        }
+
     }
 
 
