@@ -1,5 +1,5 @@
-package Service;
-import de.htwberlin.webtech.webtech.Film;
+package de.htwberlin.webtech.webtech.Service;
+import Model.Film;
 
 import org.springframework.stereotype.Service;
 import java.util.List;

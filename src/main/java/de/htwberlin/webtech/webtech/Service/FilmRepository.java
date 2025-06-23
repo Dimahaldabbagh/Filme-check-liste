@@ -1,6 +1,6 @@
-package Service;
+package de.htwberlin.webtech.webtech.Service;
 
-import de.htwberlin.webtech.webtech.Film;
+import Model.Film;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface FilmRepository extends JpaRepository<Film, Long> {
