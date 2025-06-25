@@ -36,4 +36,14 @@ public class Film {
 
     public int getBewertung() { return bewertung; }
     public void setBewertung(int bewertung) { this.bewertung = bewertung; }
+
+    @Override
+    public String toString() {
+        return "Film{" +
+                "id=" + id +
+                ", titel='" + titel + '\'' +
+                ", genre='" + genre + '\'' +
+                ", bewertung=" + bewertung +
+                '}';
+    }
 }
